@@ -1,0 +1,5 @@
+
+
+graft src/adpac_wrapper/sphinx_build/html
+recursive-include src/adpac_wrapper/test *.py *.boundata *.converge *.forces *.input *.mesh *.output *.p3d* *.restart*
+

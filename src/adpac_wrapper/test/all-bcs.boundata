@@ -1,0 +1,553 @@
+# Just a collection of all boundary conditions from the manual.
+
+# B        L   L L L L L L L   L   L   M   M   N   N   M   M   N   N
+# C        B   B F F D D S S   1   2   1   1   1   1   2   2   2   2
+# T        L   L A A I I P P   L   L   L   L   L   L   L   L   L   L
+# Y        O   O C C R R E E   I   I   I   I   I   I   I   I   I   I
+# P        C   C E E 1 2 C C   M   M   M   M   M   M   M   M   M   M
+# E        K   K 1 2     1 2           1   2   1   2   1   2   1   2
+#          1   2
+# ------ --- --- - - - - - - --- --- --- --- --- --- --- --- --- ---
+EXITP      2   1 I I M M L H  73  73   1  21   1  25  13  13   1  25
+EXT2DP     4   3 I I M M L H  49  49   1   9   1   2   9   9   1   2
+EXITN      1   1 I I M M J K  49  49   1  33   1  33   1  33   1  33
+INLETN     1   1 I I P P J K   1   1   1  33   1  33   1  33   1  33
+NPSS       1   1 I I P P J K   1   1   1  33   1  33   1  33   1  33
+
+PATCH      1   2 K I M M J I  11  17  71  81   1  17   1  17   1  11  Blks #1-#2
+PATCH      2   1 I K M M K J  17  11   1  17   1  11  71  81   1  17  Blks #1-#2
+
+PINT       1   2 I I M P L L  51   1   1  11   1  45   1  11   1  51
+PROBE      2   2 K K P P M M   1   1   5   6  25  26   5   6  25  26
+SSIN       1   1 J J P P I K   1   1   1 151   1  11   1 151   1  11
+SS2DIN     1   1 J J P P I K   1   1   1 151   1  11   1 151   1  11
+TRAF       1   1 J J P P I K   1   1   1 151   1  11   1 151   1  11
+
+# B        L   L L L L L L L   L   L   M   M   N   N   M   M   N   N
+# C        B   B F F D D S S   1   2   1   1   1   1   2   2   2   2
+# T        L   L A A I I P P   L   L   L   L   L   L   L   L   L   L
+# Y        O   O C C R R E E   I   I   I   I   I   I   I   I   I   I
+# P        C   C E E 1 2 C C   M   M   M   M   M   M   M   M   M   M
+# E        K   K 1 2     1 2           1   2   1   2   1   2   1   2
+#          1   2
+# ------ --- --- - - - - - - --- --- --- --- --- --- --- --- --- ---
+BCINT1     1   1 J J P P L L   1   1   1  33   1   2 193 177   1   2
+  IDIRNT1 IDIRNT2
+     I       I
+   ISHFTDR    DSHIFT
+         2     0.0
+
+BCINT1 1 1 J J P P L L 1 1 177 193 1 2  33   1 1 2
+  IDIRNT1 IDIRNT2
+     I       I
+   ISHFTDR    DSHIFT
+         2     0.0
+
+# B        L   L L L L L L L   L   L   M   M   N   N   M   M   N   N
+# C        B   B F F D D S S   1   2   1   1   1   1   2   2   2   2
+# T        L   L A A I I P P   L   L   L   L   L   L   L   L   L   L
+# Y        O   O C C R R E E   I   I   I   I   I   I   I   I   I   I
+# P        C   C E E 1 2 C C   M   M   M   M   M   M   M   M   M   M
+# E        K   K 1 2     1 2           1   2   1   2   1   2   1   2
+#          1   2
+# ------ --- --- - - - - - - --- --- --- --- --- --- --- --- --- ---
+BCINTM     1   3 J J P M I K   1   4   1   5   1   1   1   5   1   1
+ INTDIR1 INTDIR2 - DIRECTION OF INTERPOLATION
+       I       I
+   ISHFTDR    DSHIFT
+         2     0.0
+ NBLINT2 - NUMBER OF LBLOCK2 BLOCKS
+       3
+ NBLDAT  LFACE2 LDIR2 L2LIM M2LIM1 M2LIM2 N2LIM1 N2LIM2
+    3         J     M     4      1      6      1      1
+    4         J     M     3      1      6      1      1
+    5         J     M     4      1      7      1      1
+ NBLINT1 - NUMBER OF LBLOCK1 BLOCKS
+       2
+ LBLK1RR LFACE1 LDIR1 L1LIM M1LIM1 M1LIM2 N1LIM1 N1LIM2
+    1         J     P     1      1      5      1      1
+    2         J     P     1      1      9      1      1
+
+BCINTM     3   1 J J M P I K   4   1   1   5   1   1   1   5   1   1
+ INTDIR1 INTDIR2 - DIRECTION OF INTERPOLATION
+       I       I
+   ISHFTDR    DSHIFT
+         2     0.0
+ NBLINT2 - NUMBER OF LBLOCK2 BLOCKS
+       2
+ NBLDAT  LFACE2 LDIR2 L2LIM M2LIM1 M2LIM2 N2LIM1 N2LIM2
+    1         J     P     1      1      5      1      1
+    2         J     P     1      1      9      1      1
+ NBLINT1 - NUMBER OF LBLOCK1 BLOCKS
+       3
+ LBLK1RR LFACE1 LDIR1 L1LIM M1LIM1 M1LIM2 N1LIM1 N1LIM2
+    3         J     M     4      1      6      1      1
+    4         J     M     3      1      6      1      1
+    5         J     M     4      1      7      1      1
+
+# B        L   L L L L L L L   L   L   M   M   N   N   M   M   N   N
+# C        B   B F F D D S S   1   2   1   1   1   1   2   2   2   2
+# T        L   L A A I I P P   L   L   L   L   L   L   L   L   L   L
+# Y        O   O C C R R E E   I   I   I   I   I   I   I   I   I   I
+# P        C   C E E 1 2 C C   M   M   M   M   M   M   M   M   M   M
+# E        K   K 1 2     1 2           1   2   1   2   1   2   1   2
+#          1   2
+# ------ --- --- - - - - - - --- --- --- --- --- --- --- --- --- ---
+BCPRM      1   3 K K M M I J   7   7   1   6   1   6  36  46   1   6
+THPER
+     0.41887903
+NBCPRR - NUMBER OF BLOCKS IN LBLOCK2 TABLE OF BCPRM SPECIFICATION
+    3
+LBLOCK2B  LFACE2B  LDIR2B  L2LIMB  M2LIM1B  M2LIM2B  N2LIM1B  N2LIM2B
+3         K        M       7       36       46       1        6
+4         K        M       7       36       46       1        6
+5         K        M       7       36       46       1        6
+NRRDAT - NUMBER OF BLOCKS IN LBLOCK1 TABLE OF BCPRM SPECIFICATION
+    4
+LBLOCK1B  LFACE1B  LDIR1B  L1LIMB  M1LIM1B  M1LIM2B  N1LIM1B  N1LIM2B
+1         K        M       7        6        1       1        6
+1         K        M       7       81       76       1        6
+2         K        M       7        6        1       1        6
+2         K        M       7       81       76       1        6
+
+BCPRM      3   1 K K M M I J   7   7  36  46   1   6   6   1   1   6
+THPER
+     0.41887903
+NBCPRR - NUMBER OF BLOCKS IN LBLOCK2 TABLE OF BCPRM SPECIFICATION
+    4
+LBLOCK2B  LFACE2B  LDIR2B  L2LIMB  M2LIM1B  M2LIM2B  N2LIM1B  N2LIM2B
+1         K        M       7        6        1       1        6
+1         K        M       7       81       76       1        6
+2         K        M       7        6        1       1        6
+2         K        M       7       81       76       1        6
+NRRDAT - NUMBER OF BLOCKS IN LBLOCK1 TABLE OF BCPRM SPECIFICATION
+    3
+LBLOCK1B  LFACE1B  LDIR1B  L1LIMB  M1LIM1B  M1LIM2B  N1LIM1B  N1LIM2B
+3         K        M       7       36       46       1        6
+4         K        M       7       36       46       1        6
+5         K        M       7       36       46       1        6
+
+# B        L   L L L L L L L   L   L   M   M   N   N   M   M   N   N
+# C        B   B F F D D S S   1   2   1   1   1   1   2   2   2   2
+# T        L   L A A I I P P   L   L   L   L   L   L   L   L   L   L
+# Y        O   O C C R R E E   I   I   I   I   I   I   I   I   I   I
+# P        C   C E E 1 2 C C   M   M   M   M   M   M   M   M   M   M
+# E        K   K 1 2     1 2           1   2   1   2   1   2   1   2
+#          1   2
+# ------ --- --- - - - - - - --- --- --- --- --- --- --- --- --- ---
+BCPRR      1   3 K K M M I J   7   7   1   6   1   6  36  46   1   6
+THPER
+     0.41887903
+NBCPRR - NUMBER OF BLOCKS IN LBLOCK2 TABLE OF BCPRR SPECIFICATION
+    3
+LBLOCK2B  LFACE2B  LDIR2B  L2LIMB  M2LIM1B  M2LIM2B  N2LIM1B  N2LIM2B
+3         K        M       7       36       46       1        6
+4         K        M       7       36       46       1        6
+5         K        M       7       36       46       1        6
+
+# B        L   L L L L L L L   L   L   M   M   N   N   M   M   N   N
+# C        B   B F F D D S S   1   2   1   1   1   1   2   2   2   2
+# T        L   L A A I I P P   L   L   L   L   L   L   L   L   L   L
+# Y        O   O C C R R E E   I   I   I   I   I   I   I   I   I   I
+# P        C   C E E 1 2 C C   M   M   M   M   M   M   M   M   M   M
+# E        K   K 1 2     1 2           1   2   1   2   1   2   1   2
+#          1   2
+# ------ --- --- - - - - - - --- --- --- --- --- --- --- --- --- ---
+BDATIN     1   2 I I M P J K  51   1   1   3   1  51   1   3   1  51
+FILENAME
+bc.12.data
+
+# B        L   L L L L L L L   L   L   M   M   N   N   M   M   N   N
+# C        B   B F F D D S S   1   2   1   1   1   1   2   2   2   2
+# T        L   L A A I I P P   L   L   L   L   L   L   L   L   L   L
+# Y        O   O C C R R E E   I   I   I   I   I   I   I   I   I   I
+# P        C   C E E 1 2 C C   M   M   M   M   M   M   M   M   M   M
+# E        K   K 1 2     1 2           1   2   1   2   1   2   1   2
+#          1   2
+# ------ --- --- - - - - - - --- --- --- --- --- --- --- --- --- ---
+BDATOU     1   2 I I M P J K  51   1   1   3   1  51   1   3   1  51
+FILENAME
+bc.12.data
+
+# B        L   L L L L L L L   L   L   M   M   N   N   M   M   N   N
+# C        B   B F F D D S S   1   2   1   1   1   1   2   2   2   2
+# T        L   L A A I I P P   L   L   L   L   L   L   L   L   L   L
+# Y        O   O C C R R E E   I   I   I   I   I   I   I   I   I   I
+# P        C   C E E 1 2 C C   M   M   M   M   M   M   M   M   M   M
+# E        K   K 1 2     1 2           1   2   1   2   1   2   1   2
+#          1   2
+# ------ --- --- - - - - - - --- --- --- --- --- --- --- --- --- ---
+ENDTTA     1   2 J J M P L L  49   1  49  81   1  33   1  33   1  17
+NTREAT RPMWALL TWALL
+113    0.0     0.0
+
+# B        L   L L L L L L L   L   L   M   M   N   N   M   M   N   N
+# C        B   B F F D D S S   1   2   1   1   1   1   2   2   2   2
+# T        L   L A A I I P P   L   L   L   L   L   L   L   L   L   L
+# Y        O   O C C R R E E   I   I   I   I   I   I   I   I   I   I
+# P        C   C E E 1 2 C C   M   M   M   M   M   M   M   M   M   M
+# E        K   K 1 2     1 2           1   2   1   2   1   2   1   2
+#          1   2
+# ------ --- --- - - - - - - --- --- --- --- --- --- --- --- --- ---
+EXITG      1   1 I I M M J K  49  49   1  33   1  33   1  33   1  33
+PEXIT
+0.625
+
+EXITG      1   1 I I M M J K  49  49   1  33   1  33   1  33   1  33
+PEXIT    EMDOT    PRELAX
+0.625    40.0     0.001
+
+# B        L   L L L L L L L   L   L   M   M   N   N   M   M   N   N
+# C        B   B F F D D S S   1   2   1   1   1   1   2   2   2   2
+# T        L   L A A I I P P   L   L   L   L   L   L   L   L   L   L
+# Y        O   O C C R R E E   I   I   I   I   I   I   I   I   I   I
+# P        C   C E E 1 2 C C   M   M   M   M   M   M   M   M   M   M
+# E        K   K 1 2     1 2           1   2   1   2   1   2   1   2
+#          1   2
+# ------ --- --- - - - - - - --- --- --- --- --- --- --- --- --- ---
+EXITT      1   1 I I M M L L  49  49   1  17   1  17   1  17   1  17
+PEXIT
+1.105
+
+EXITT      1   1 I I M M L L  49  49   1  17   1  17   1  17   1  17
+PEXIT    EMDOT   PRELAX
+1.105    13.7    0.001
+
+# B        L   L L L L L L L   L   L   M   M   N   N   M   M   N   N
+# C        B   B F F D D S S   1   2   1   1   1   1   2   2   2   2
+# T        L   L A A I I P P   L   L   L   L   L   L   L   L   L   L
+# Y        O   O C C R R E E   I   I   I   I   I   I   I   I   I   I
+# P        C   C E E 1 2 C C   M   M   M   M   M   M   M   M   M   M
+# E        K   K 1 2     1 2           1   2   1   2   1   2   1   2
+#          1   2
+# ------ --- --- - - - - - - --- --- --- --- --- --- --- --- --- ---
+EXITX      1   1 I I M M L L  49  49   1  17   1  17   1  17   1  17
+PEXIT
+1.105
+
+# B        L   L L L L L L L   L   L   M   M   N   N   M   M   N   N
+# C        B   B F F D D S S   1   2   1   1   1   1   2   2   2   2
+# T        L   L A A I I P P   L   L   L   L   L   L   L   L   L   L
+# Y        O   O C C R R E E   I   I   I   I   I   I   I   I   I   I
+# P        C   C E E 1 2 C C   M   M   M   M   M   M   M   M   M   M
+# E        K   K 1 2     1 2           1   2   1   2   1   2   1   2
+#          1   2
+# ------ --- --- - - - - - - --- --- --- --- --- --- --- --- --- ---
+EXT2DT     1   1 I I M M L L  49  49   1  17   1   2   1  17   1   2
+PEXIT
+1.105
+
+EXT2DT     1   1 I I M M L L  49  49   1  17   1   2   1  17   1   2
+PEXIT    EMDOT   PRELAX
+1.105    13.7    0.001
+
+# B        L   L L L L L L L   L   L   M   M   N   N   M   M   N   N
+# C        B   B F F D D S S   1   2   1   1   1   1   2   2   2   2
+# T        L   L A A I I P P   L   L   L   L   L   L   L   L   L   L
+# Y        O   O C C R R E E   I   I   I   I   I   I   I   I   I   I
+# P        C   C E E 1 2 C C   M   M   M   M   M   M   M   M   M   M
+# E        K   K 1 2     1 2           1   2   1   2   1   2   1   2
+#          1   2
+# ------ --- --- - - - - - - --- --- --- --- --- --- --- --- --- ---
+FIXED      1   1 J J P P I K   1   1  11  21   1  11  11  21   1  11
+RO     U      V      W    TTOT
+0.002  100.0  100.0  0.0  600.0
+
+# B        L   L L L L L L L   L   L   M   M   N   N   M   M   N   N
+# C        B   B F F D D S S   1   2   1   1   1   1   2   2   2   2
+# T        L   L A A I I P P   L   L   L   L   L   L   L   L   L   L
+# Y        O   O C C R R E E   I   I   I   I   I   I   I   I   I   I
+# P        C   C E E 1 2 C C   M   M   M   M   M   M   M   M   M   M
+# E        K   K 1 2     1 2           1   2   1   2   1   2   1   2
+#          1   2
+# ------ --- --- - - - - - - --- --- --- --- --- --- --- --- --- ---
+FRE2D      2   2 J J M M I K  17  17   1 129   1   2   1 129   1   2  Block 2
+PTOT   TTOT  EMINF   ALPHA  AKIN   ARIN
+1.0    1.0    0.75    0.0    1.0   0.0001
+
+FRE2D      2   2 J J M M I K  17  17   1 129   1   2   1 129   1   2  Block 2
+PTOT   TTOT  EMINF   ALPHA  CHI
+1.0    1.0    0.75    0.0   1.0
+
+FRE2D      2   2 J J M M I K  17  17   1 129   1   2   1 129   1   2  Block 2
+PTOT   TTOT  EMINF   ALPHA
+1.0    1.0    0.75    0.0
+
+# B        L   L L L L L L L   L   L   M   M   N   N   M   M   N   N
+# C        B   B F F D D S S   1   2   1   1   1   1   2   2   2   2
+# T        L   L A A I I P P   L   L   L   L   L   L   L   L   L   L
+# Y        O   O C C R R E E   I   I   I   I   I   I   I   I   I   I
+# P        C   C E E 1 2 C C   M   M   M   M   M   M   M   M   M   M
+# E        K   K 1 2     1 2           1   2   1   2   1   2   1   2
+#          1   2
+# ------ --- --- - - - - - - --- --- --- --- --- --- --- --- --- ---
+FREE       2   2 J J M M I K   9   9   1  65   1  13   1  65   1  13
+PTOT   TTOT  EMINF   ALPHA  AKIN   ARIN
+1.0    1.0    0.75   10.0    1.0   0.0001
+
+FREE       2   2 J J M M I K   9   9   1  65   1  13   1  65   1  13
+PTOT   TTOT  EMINF   ALPHA  CHI
+1.0    1.0    0.75   10.0   1.0
+
+FREE       2   2 J J M M I K   9   9   1  65   1  13   1  65   1  13
+PTOT   TTOT  EMINF   ALPHA
+1.0    1.0    0.75   10.0
+
+# B        L   L L L L L L L   L   L   M   M   N   N   M   M   N   N
+# C        B   B F F D D S S   1   2   1   1   1   1   2   2   2   2
+# T        L   L A A I I P P   L   L   L   L   L   L   L   L   L   L
+# Y        O   O C C R R E E   I   I   I   I   I   I   I   I   I   I
+# P        C   C E E 1 2 C C   M   M   M   M   M   M   M   M   M   M
+# E        K   K 1 2     1 2           1   2   1   2   1   2   1   2
+#          1   2
+# ------ --- --- - - - - - - --- --- --- --- --- --- --- --- --- ---
+INL2DA     1   1 J J M M I K  25  25  83 115   1   2  83 115   1   2
+PTOT   TTOT  ALPHA  AKIN   ARIN
+1.0    1.0   20.0    1.0   0.0001
+
+INL2DA     1   1 J J M M I K  25  25  83 115   1   2  83 115   1   2
+PTOT   TTOT  ALPHA  CHI
+1.0    1.0   20.0   1.0
+
+INL2DA     1   1 J J M M I K  25  25  83 115   1   2  83 115   1   2
+PTOT   TTOT  ALPHA
+1.0    1.0   20.0
+
+# B        L   L L L L L L L   L   L   M   M   N   N   M   M   N   N
+# C        B   B F F D D S S   1   2   1   1   1   1   2   2   2   2
+# T        L   L A A I I P P   L   L   L   L   L   L   L   L   L   L
+# Y        O   O C C R R E E   I   I   I   I   I   I   I   I   I   I
+# P        C   C E E 1 2 C C   M   M   M   M   M   M   M   M   M   M
+# E        K   K 1 2     1 2           1   2   1   2   1   2   1   2
+#          1   2
+# ------ --- --- - - - - - - --- --- --- --- --- --- --- --- --- ---
+INL2DT     1   1 I I P P J K   1   1   1  17   1   2   1  17   1   2
+NDATA
+ 7
+RAD  PTOT   TTOT   BETAR   BETAT    CHI
+0.20 1.01   0.98   5.0      5.1     1.0
+0.25 1.01   0.99   4.0      5.7     1.0
+0.30 1.00   1.00   3.0      6.3     1.0
+0.35 0.99   1.01   2.5      6.8     1.0
+0.40 0.97   1.00   2.0      7.4     1.0
+0.45 0.96   1.01   1.0      8.0     2.0
+0.50 0.95   1.01   0.0      7.7     5.0
+
+# B        L   L L L L L L L   L   L   M   M   N   N   M   M   N   N
+# C        B   B F F D D S S   1   2   1   1   1   1   2   2   2   2
+# T        L   L A A I I P P   L   L   L   L   L   L   L   L   L   L
+# Y        O   O C C R R E E   I   I   I   I   I   I   I   I   I   I
+# P        C   C E E 1 2 C C   M   M   M   M   M   M   M   M   M   M
+# E        K   K 1 2     1 2           1   2   1   2   1   2   1   2
+#          1   2
+# ------ --- --- - - - - - - --- --- --- --- --- --- --- --- --- ---
+INLETA     1   1 I I P P J K   1   1   1   9   1  13   1   9   1  13
+PTOT   TTOT  ALPHA  AKIN   ARIN
+1.0    1.0   20.0    1.0   0.0001
+
+INLETA     1   1 I I P P J K   1   1   1   9   1  13   1   9   1  13
+PTOT   TTOT  ALPHA  CHI
+1.0    1.0   20.0   1.0
+
+INLETA     1   1 I I P P J K   1   1   1   9   1  13   1   9   1  13
+PTOT   TTOT  ALPHA
+1.0    1.0   20.0
+
+# B        L   L L L L L L L   L   L   M   M   N   N   M   M   N   N
+# C        B   B F F D D S S   1   2   1   1   1   1   2   2   2   2
+# T        L   L A A I I P P   L   L   L   L   L   L   L   L   L   L
+# Y        O   O C C R R E E   I   I   I   I   I   I   I   I   I   I
+# P        C   C E E 1 2 C C   M   M   M   M   M   M   M   M   M   M
+# E        K   K 1 2     1 2           1   2   1   2   1   2   1   2
+#          1   2
+# ------ --- --- - - - - - - --- --- --- --- --- --- --- --- --- ---
+INLETG     1   1 I I P P J K   1   1   1  33   1  33   1  33   1  33
+PTOT   TTOT   CHI/AKIN   ARIN   ANGLE1  ANGLE2  EMDOT  PRELAX
+1.0    1.0      1.00    0.0001   0.0    -20.0    5.34    0.1
+
+INLETG     1   1 I I P P J K   1   1   1  33   1  33   1  33   1  33
+PTOT   TTOT   CHI/AKIN   ARIN   ANGLE1  ANGLE2  EMDOT
+1.0    1.0      1.00    0.0001   0.0    -20.0    5.34
+
+INLETG     1   1 I I P P J K   1   1   1  33   1  33   1  33   1  33
+PTOT   TTOT   CHI/AKIN   ARIN   ANGLE1  ANGLE2
+1.0    1.0      1.00    0.0001   0.0    -20.0
+
+INLETG     1   1 I I P P J K   1   1   1  33   1  33   1  33   1  33
+PTOT   TTOT   CHI/AKIN   ARIN   ANGLE1
+1.0    1.0      1.00    0.0001   0.0
+
+INLETG     1   1 I I P P J K   1   1   1  33   1  33   1  33   1  33
+PTOT   TTOT   CHI/AKIN   ARIN
+1.0    1.0      1.00    0.0001
+
+INLETG     1   1 I I P P J K   1   1   1  33   1  33   1  33   1  33
+PTOT   TTOT   CHI/AKIN
+1.0    1.0      1.00
+
+INLETG     1   1 I I P P J K   1   1   1  33   1  33   1  33   1  33
+PTOT   TTOT
+1.0    1.0
+
+# B        L   L L L L L L L   L   L   M   M   N   N   M   M   N   N
+# C        B   B F F D D S S   1   2   1   1   1   1   2   2   2   2
+# T        L   L A A I I P P   L   L   L   L   L   L   L   L   L   L
+# Y        O   O C C R R E E   I   I   I   I   I   I   I   I   I   I
+# P        C   C E E 1 2 C C   M   M   M   M   M   M   M   M   M   M
+# E        K   K 1 2     1 2           1   2   1   2   1   2   1   2
+#          1   2
+# ------ --- --- - - - - - - --- --- --- --- --- --- --- --- --- ---
+INLETM     1   1 I I P P J K   1   1   1  33   1  33   1  33   1  33
+EMDOT TTOT
+13.7  1.0
+
+# B        L   L L L L L L L   L   L   M   M   N   N   M   M   N   N
+# C        B   B F F D D S S   1   2   1   1   1   1   2   2   2   2
+# T        L   L A A I I P P   L   L   L   L   L   L   L   L   L   L
+# Y        O   O C C R R E E   I   I   I   I   I   I   I   I   I   I
+# P        C   C E E 1 2 C C   M   M   M   M   M   M   M   M   M   M
+# E        K   K 1 2     1 2           1   2   1   2   1   2   1   2
+#          1   2
+# ------ --- --- - - - - - - --- --- --- --- --- --- --- --- --- ---
+INLETR     1   1 I I P P J K   1   1   1  13   1  17   1  13   1  17
+NDATA
+ 4
+AXIAL  PTOT   TTOT   BETAX   BETAT
+0.1    0.99   0.99   5.0     -73.3
+0.2    0.98   1.01   4.0     -75.8
+0.3    0.97   1.00   3.0     -77.2
+0.4    0.96   1.01   2.0     -79.0
+
+# B        L   L L L L L L L   L   L   M   M   N   N   M   M   N   N
+# C        B   B F F D D S S   1   2   1   1   1   1   2   2   2   2
+# T        L   L A A I I P P   L   L   L   L   L   L   L   L   L   L
+# Y        O   O C C R R E E   I   I   I   I   I   I   I   I   I   I
+# P        C   C E E 1 2 C C   M   M   M   M   M   M   M   M   M   M
+# E        K   K 1 2     1 2           1   2   1   2   1   2   1   2
+#          1   2
+# ------ --- --- - - - - - - --- --- --- --- --- --- --- --- --- ---
+INLETT     1   1 I I P P J K   1   1   1  17   1  17   1  17   1  17
+NDATA
+ 7
+RAD  PTOT   TTOT   BETAR   BETAT    CHI
+0.20 1.01   0.98   5.0      5.1     1.0
+0.25 1.01   0.99   4.0      5.7     1.0
+0.30 1.00   1.00   3.0      6.3     1.0
+0.35 0.99   1.01   2.5      6.8     1.0
+0.40 0.97   1.00   2.0      7.4     1.0
+0.45 0.96   1.01   1.0      8.0     2.0
+0.50 0.95   1.01   0.0      7.7     5.0
+
+# B        L   L L L L L L L   L   L   M   M   N   N   M   M   N   N
+# C        B   B F F D D S S   1   2   1   1   1   1   2   2   2   2
+# T        L   L A A I I P P   L   L   L   L   L   L   L   L   L   L
+# Y        O   O C C R R E E   I   I   I   I   I   I   I   I   I   I
+# P        C   C E E 1 2 C C   M   M   M   M   M   M   M   M   M   M
+# E        K   K 1 2     1 2           1   2   1   2   1   2   1   2
+#          1   2
+# ------ --- --- - - - - - - --- --- --- --- --- --- --- --- --- ---
+INLETX     1   1 I I P P J K   1   1   1  17   1  17   1  17   1  17
+NDATA
+ 7
+RAD  PTOT   TTOT   BETAR   BETAT    CHI
+0.20 1.01   0.98   5.0      5.1     1.0
+0.25 1.01   0.99   4.0      5.7     1.0
+0.30 1.00   1.00   3.0      6.3     1.0
+0.35 0.99   1.01   2.5      6.8     1.0
+0.40 0.97   1.00   2.0      7.4     1.0
+0.45 0.96   1.01   1.0      8.0     2.0
+0.50 0.95   1.01   0.0      7.7     5.0
+
+# B        L   L L L L L L L   L   L   M   M   N   N   M   M   N   N
+# C        B   B F F D D S S   1   2   1   1   1   1   2   2   2   2
+# T        L   L A A I I P P   L   L   L   L   L   L   L   L   L   L
+# Y        O   O C C R R E E   I   I   I   I   I   I   I   I   I   I
+# P        C   C E E 1 2 C C   M   M   M   M   M   M   M   M   M   M
+# E        K   K 1 2     1 2           1   2   1   2   1   2   1   2
+#          1   2
+# ------ --- --- - - - - - - --- --- --- --- --- --- --- --- --- ---
+KIL2D      1   1 I I M M L L  40  60  21  31   1   2  21  31   1   2
+   LSTART   LEND
+       40     60
+
+# B        L   L L L L L L L   L   L   M   M   N   N   M   M   N   N
+# C        B   B F F D D S S   1   2   1   1   1   1   2   2   2   2
+# T        L   L A A I I P P   L   L   L   L   L   L   L   L   L   L
+# Y        O   O C C R R E E   I   I   I   I   I   I   I   I   I   I
+# P        C   C E E 1 2 C C   M   M   M   M   M   M   M   M   M   M
+# E        K   K 1 2     1 2           1   2   1   2   1   2   1   2
+#          1   2
+# ------ --- --- - - - - - - --- --- --- --- --- --- --- --- --- ---
+KILL       1   1 I I P P L L  49  49   1  19   1   5   1  19   1   5
+   LSTART   LEND
+       49     51
+
+# B        L   L L L L L L L   L   L   M   M   N   N   M   M   N   N
+# C        B   B F F D D S S   1   2   1   1   1   1   2   2   2   2
+# T        L   L A A I I P P   L   L   L   L   L   L   L   L   L   L
+# Y        O   O C C R R E E   I   I   I   I   I   I   I   I   I   I
+# P        C   C E E 1 2 C C   M   M   M   M   M   M   M   M   M   M
+# E        K   K 1 2     1 2           1   2   1   2   1   2   1   2
+#          1   2
+# ------ --- --- - - - - - - --- --- --- --- --- --- --- --- --- ---
+LAMSS      1   1 K K P P I K   1   1   1 151   1  11   1 151   1  11
+PT    TT    RPMLOC      TWALL   ARATIO
+1.1   0.70  0.0         0.0     0.10
+
+# B        L   L L L L L L L   L   L   M   M   N   N   M   M   N   N
+# C        B   B F F D D S S   1   2   1   1   1   1   2   2   2   2
+# T        L   L A A I I P P   L   L   L   L   L   L   L   L   L   L
+# Y        O   O C C R R E E   I   I   I   I   I   I   I   I   I   I
+# P        C   C E E 1 2 C C   M   M   M   M   M   M   M   M   M   M
+# E        K   K 1 2     1 2           1   2   1   2   1   2   1   2
+#          1   2
+# ------ --- --- - - - - - - --- --- --- --- --- --- --- --- --- ---
+MBCAVG     1   2 K K M M I J   7   7  36  46   1   6   1   6   1   6
+NSEGS
+     2
+LBLOCK2B  LFACE2B  LDIR2B  L2LIMB  M2LIM1B  M2LIM2B  N2LIM1B  N2LIM2B
+1         K        M       7        1        6       1        6
+1         K        M       7       76       81       1        6
+
+# B        L   L L L L L L L   L   L   M   M   N   N   M   M   N   N
+# C        B   B F F D D S S   1   2   1   1   1   1   2   2   2   2
+# T        L   L A A I I P P   L   L   L   L   L   L   L   L   L   L
+# Y        O   O C C R R E E   I   I   I   I   I   I   I   I   I   I
+# P        C   C E E 1 2 C C   M   M   M   M   M   M   M   M   M   M
+# E        K   K 1 2     1 2           1   2   1   2   1   2   1   2
+#          1   2
+# ------ --- --- - - - - - - --- --- --- --- --- --- --- --- --- ---
+SSVI       1   1 J J P P I K   1   1   1 151   1  11   1 151   1  11
+RPMWALL  TWALL
+0.0      0.0
+
+# B        L   L L L L L L L   L   L   M   M   N   N   M   M   N   N
+# C        B   B F F D D S S   1   2   1   1   1   1   2   2   2   2
+# T        L   L A A I I P P   L   L   L   L   L   L   L   L   L   L
+# Y        O   O C C R R E E   I   I   I   I   I   I   I   I   I   I
+# P        C   C E E 1 2 C C   M   M   M   M   M   M   M   M   M   M
+# E        K   K 1 2     1 2           1   2   1   2   1   2   1   2
+#          1   2
+# ------ --- --- - - - - - - --- --- --- --- --- --- --- --- --- ---
+SYSTEM     1   1 J J P P I K   1   1  11  21   1  11  11  21   1  11
+INTERVAL
+1
+COMMAND
+/usr/local/bin/updatebc
+
+# B        L   L L L L L L L   L   L   M   M   N   N   M   M   N   N
+# C        B   B F F D D S S   1   2   1   1   1   1   2   2   2   2
+# T        L   L A A I I P P   L   L   L   L   L   L   L   L   L   L
+# Y        O   O C C R R E E   I   I   I   I   I   I   I   I   I   I
+# P        C   C E E 1 2 C C   M   M   M   M   M   M   M   M   M   M
+# E        K   K 1 2     1 2           1   2   1   2   1   2   1   2
+#          1   2
+# ------ --- --- - - - - - - --- --- --- --- --- --- --- --- --- ---
+VCE        1   1 J J P P I K   1   1  11  21   1  11  11  21   1  11
+GLOBAL_ID
+-42
+
+
+ENDDATA
+Just some trailer stuff that should be ignored.
+
