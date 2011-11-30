@@ -46,7 +46,7 @@ class ADSPIN(ExternalCode):
                 os.remove(name)
 
         if self.run_adspin:
-            self.command = 'adspin'
+            self.command = ['adspin']
             self.stdin = 'adspin.inp'
             self.stdout = 'adspin.log'
             self.stderr = ExternalCode.STDOUT

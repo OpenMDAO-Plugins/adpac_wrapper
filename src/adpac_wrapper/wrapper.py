@@ -5,7 +5,7 @@ from openmdao.main.api import FileMetadata, set_as_top
 from openmdao.main.resource import ResourceAllocationManager as RAM
 from openmdao.lib.components.external_code import ExternalCode
 from openmdao.lib.datatypes.api import Bool, Int, Float, Str
-from openmdao.lib.datatypes.domain import surface_probe
+from openmdao.lib.datatypes.domain import mesh_probe
 
 from adpac_wrapper.boundata import Boundata
 from adpac_wrapper.converge import Converge
@@ -86,7 +86,7 @@ class ADPAC(ExternalCode):
     def __init__(self, casename=None, *args, **kwargs):
         super(ADPAC, self).__init__(*args, **kwargs)
         self.poll_delay = 1.  # Default is very short.
-        self.surface_probes = []
+        self.mesh_probes = []
 
         self.add('input', Input())
         self.add('boundata', Boundata())
@@ -110,7 +110,7 @@ class ADPAC(ExternalCode):
             if not hasattr(self, attr):
                 setattr(self, attr, Float(units=units, iotype='out',
                                           desc='Surface probe for ' + metric))
-        self.surface_probes.append(request)
+        self.mesh_probes.append(request)
 
     def create_property(self, name, targets):
         """
@@ -278,11 +278,11 @@ class ADPAC(ExternalCode):
         else:
             self.resources = {'n_cpus': 1}
 
-        self.command = self.serial_adpac
+        self.command = [self.serial_adpac]
         if not self.idissf:
-            self.command += ' -d'
+            self.command.append('-d')
         if self.irevs:
-            self.command += ' -r'
+            self.command.append('-r')
 
         self.stdin  = self.input.casename+'.input'
         self.stdout = self.input.casename+'.output'
@@ -338,39 +338,39 @@ class ADPAC(ExternalCode):
             for name in hostnames:
                 out.write('%s\n' % name)
 
-        self.command  = self.mpi_path
-        self.command += ' -np %d' % n_cpus
-        self.command += ' -machinefile %s' % machinefile
+        self.command = [self.mpi_path]
+        self.command.extend(['-np', str(n_cpus)])
+        self.command.extend(['-machinefile', machinefile])
 
         if os.path.sep in self.mpi_adpac:
-            self.command += ' %s' % self.mpi_adpac
+            self.command.append(self.mpi_adpac)
         else:
             # Some mpirun commands want a real path.
             for prefix in os.environ['PATH'].split(os.path.pathsep):
                 path = os.path.join(prefix, self.mpi_adpac)
                 if os.path.exists(path):
-                    self.command += ' %s' % path
+                    self.command.append(path)
                     break
             else:
                 self.raise_exception("Can't find %r on PATH" % self.mpi_adpac,
                                      RuntimeError)
         if self.stats:
-            self.command += ' -s all'
-        self.command += ' -Z'
+            self.command.extend(['-s', 'all'])
+        self.command.append('-Z')
 
         if self.iasync:
-            self.command += ' -a'
+            self.command.append('-a')
         if self.ibalance:
-            self.command += ' -b'
+            self.command.append('-b')
         if not self.icheck:
-            self.command += ' -c'
+            self.command.append('-c')
         if not self.idissf:
-            self.command += ' -d'
+            self.command.append('-d')
         if self.irevs:
-            self.command += ' -r'
+            self.command.append('-r')
 
-        self.command += ' -i %s' % self.input.casename+'.input'
-        self.command += ' -o %s' % self.input.casename+'.output'
+        self.command.extend(['-i', self.input.casename+'.input'])
+        self.command.extend(['-o', self.input.casename+'.output'])
 
         self.stdout = self.input.casename+'.log'
         self.stderr = ExternalCode.STDOUT
@@ -451,7 +451,7 @@ class ADPAC(ExternalCode):
     def evaluate_probe_requests(self):
         """ Evaluates all surface probe requests. """
         domain = restart.read(self.input.casename, self._logger)
-        for req in self.surface_probes:
+        for req in self.mesh_probes:
             surfaces = []
             for block, imin, imax, jmin, jmax, kmin, kmax in req.surfaces:
                 zone = 'zone_%d' % block
@@ -466,7 +466,7 @@ class ADPAC(ExternalCode):
             for attr, metric, units in req.variables:
                 variables.append((metric, units))
 
-            metrics = surface_probe(domain, surfaces, variables, req.scheme)
+            metrics = mesh_probe(domain, surfaces, variables, req.scheme)
             for i, (attr, metric, units) in enumerate(req.variables):
                 setattr(self, attr, metrics[i])
 
