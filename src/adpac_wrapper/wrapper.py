@@ -83,8 +83,8 @@ class ADPAC(ExternalCode):
     irevs = Bool(False, iotype='in',
                  desc='Print forces for rotating blocks.')
 
-    def __init__(self, casename=None, *args, **kwargs):
-        super(ADPAC, self).__init__(*args, **kwargs)
+    def __init__(self, casename=None):
+        super(ADPAC, self).__init__()
         self.poll_delay = 1.  # Default is very short.
         self.mesh_probes = []
 
