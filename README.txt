@@ -9,5 +9,5 @@ proper channels.
 
 To view the Sphinx documentation for this distribution, type:
 
-plugin_docs adpac_wrapper
+openmdao docs adpac_wrapper
 
