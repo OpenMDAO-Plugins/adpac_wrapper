@@ -26,29 +26,29 @@ Package Metadata
     adpac_wrapper.adspin.ADSPIN=adpac_wrapper.adspin:ADSPIN
     adpac_wrapper.bcintm.BCIntM_recv=adpac_wrapper.bcintm:BCIntM_recv
     adpac_wrapper.inletm.InletM=adpac_wrapper.inletm:InletM
-    adpac_wrapper.endtta.EndTTA=adpac_wrapper.endtta:EndTTA
+    adpac_wrapper.free.Free=adpac_wrapper.free:Free
     adpac_wrapper.ssvi.SSVI=adpac_wrapper.ssvi:SSVI
     adpac_wrapper.boundata.Boundata=adpac_wrapper.boundata:Boundata
     adpac_wrapper.fixed.Fixed=adpac_wrapper.fixed:Fixed
     adpac_wrapper.bcprm.BCPRM=adpac_wrapper.bcprm:BCPRM
+    adpac_wrapper.input.Input=adpac_wrapper.input:Input
     adpac_wrapper.vis3d.Vis3DCollection=adpac_wrapper.vis3d:Vis3DCollection
     adpac_wrapper.bcintm.BCIntM=adpac_wrapper.bcintm:BCIntM
-    adpac_wrapper.inletr.InletR_data=adpac_wrapper.inletr:InletR_data
+    adpac_wrapper.lamss.LamSS=adpac_wrapper.lamss:LamSS
     adpac_wrapper.system.System=adpac_wrapper.system:System
-    adpac_wrapper.free.Free=adpac_wrapper.free:Free
+    adpac_wrapper.endtta.EndTTA=adpac_wrapper.endtta:EndTTA
     adpac_wrapper.bcintm.BCIntM_send=adpac_wrapper.bcintm:BCIntM_send
-    adpac_wrapper.input.Input=adpac_wrapper.input:Input
+    adpac_wrapper.inlett.InletT_data=adpac_wrapper.inlett:InletT_data
     adpac_wrapper.vis3d.Plot3D=adpac_wrapper.vis3d:Plot3D
     adpac_wrapper.kill.Kill=adpac_wrapper.kill:Kill
     adpac_wrapper.inlett.InletT=adpac_wrapper.inlett:InletT
     adpac_wrapper.vis3d.MeshSurface=adpac_wrapper.vis3d:MeshSurface
-    adpac_wrapper.inlett.InletT_data=adpac_wrapper.inlett:InletT_data
     adpac_wrapper.bcint1.BCInt1=adpac_wrapper.bcint1:BCInt1
+    adpac_wrapper.inletr.InletR_data=adpac_wrapper.inletr:InletR_data
     adpac_wrapper.vis3d.Vis3D=adpac_wrapper.vis3d:Vis3D
     adpac_wrapper.bdatin.BDatIn=adpac_wrapper.bdatin:BDatIn
     adpac_wrapper.vce.VCE=adpac_wrapper.vce:VCE
-    adpac_wrapper.lamss.LamSS=adpac_wrapper.lamss:LamSS
-    adpac_wrapper.bcprr.BCPRR=adpac_wrapper.bcprr:BCPRR
+    adpac_wrapper.inletg.InletG=adpac_wrapper.inletg:InletG
     adpac_wrapper.vis3d.Vis3DObject=adpac_wrapper.vis3d:Vis3DObject
     adpac_wrapper.mbcavg.MBCAvg=adpac_wrapper.mbcavg:MBCAvg
     adpac_wrapper.exitg.ExitG=adpac_wrapper.exitg:ExitG
@@ -57,7 +57,7 @@ Package Metadata
     adpac_wrapper.vis3d.BladeRow=adpac_wrapper.vis3d:BladeRow
     adpac_wrapper.inletr.InletR=adpac_wrapper.inletr:InletR
     adpac_wrapper.inleta.InletA=adpac_wrapper.inleta:InletA
-    adpac_wrapper.inletg.InletG=adpac_wrapper.inletg:InletG
+    adpac_wrapper.bcprr.BCPRR=adpac_wrapper.bcprr:BCPRR
     adpac_wrapper.wrapper.ADPAC=adpac_wrapper.wrapper:ADPAC
     adpac_wrapper.mbcavg.MBCAvg_seg=adpac_wrapper.mbcavg:MBCAvg_seg
 
@@ -84,5 +84,5 @@ Package Metadata
 
 - **summary:** Component wrapper for ADPAC (Advanced Ducted Propfan Analysis Code)
 
-- **version:** 0.4
+- **version:** 0.5
 
