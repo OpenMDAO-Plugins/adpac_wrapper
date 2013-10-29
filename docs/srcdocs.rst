@@ -358,6 +358,31 @@ system.py
    :show-inheritance:
 
         
+.. index:: test_input.py
+
+.. _adpac_wrapper.test.test_input.py:
+
+test_input.py
+-------------
+
+.. automodule:: adpac_wrapper.test.test_input
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+        
+.. index:: test_wrapper.py
+
+.. _adpac_wrapper.test.test_wrapper.py:
+
+test_wrapper.py
+---------------
+
+.. automodule:: adpac_wrapper.test.test_wrapper
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 .. index:: vce.py
 
 .. _adpac_wrapper.vce.py:

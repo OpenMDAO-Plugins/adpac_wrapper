@@ -1,7 +1,7 @@
 import weakref
 
-from enthought.traits.api import TraitType
-from enthought.traits.trait_handlers import NoDefaultSpecified
+from traits.api import TraitType
+from traits.trait_handlers import NoDefaultSpecified
 
 from openmdao.main.api import convert_units
 from openmdao.main.attrwrapper import AttrWrapper
@@ -32,6 +32,7 @@ class Property(TraitType):
     def __setstate__(self, state):
         """ Convert targets to weak references. """
         self.__dict__.update(state)
+        resolved = self._targets
         self._targets = []
         for obj, attr, indices in resolved:
             self._targets.append((weakref.ref(obj), attr, indices))
