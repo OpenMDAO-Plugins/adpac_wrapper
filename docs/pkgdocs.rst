@@ -84,5 +84,5 @@ Package Metadata
 
 - **summary:** Component wrapper for ADPAC (Advanced Ducted Propfan Analysis Code)
 
-- **version:** 0.5
+- **version:** 0.6
 

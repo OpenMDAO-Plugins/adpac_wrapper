@@ -90,13 +90,12 @@ kwargs = {'author': 'Scott E. Townsend',
                                     'test/__init__.py',
                                     'test/test_input.py',
                                     'test/all-bcs.boundata',
-                                    'test/openmdao_log.txt',
                                     'test/all-bcs.input',
                                     'test/test_wrapper.py']},
  'package_dir': {'': 'src'},
  'packages': ['adpac_wrapper', 'adpac_wrapper.test'],
  'url': 'https://github.com/OpenMDAO-Plugins/adpac_wrapper',
- 'version': '0.5',
+ 'version': '0.6',
  'zip_safe': False}
 
 
